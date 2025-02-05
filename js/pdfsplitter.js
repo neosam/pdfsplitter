@@ -10,9 +10,14 @@
             fileList.fileActions.registerAction({
                 name: 'splitPDF',
                 displayName: t('pdfsplitter', 'Split PDF'),
-                mime: 'application/pdf,application/x-pdf',
+                mime: 'application/pdf',
+                order: -140,
                 permissions: OC.PERMISSION_UPDATE,
                 iconClass: 'icon-pdfsplitter',
+                shouldRender: function(file) {
+                    console.log('PDFSplitter: Checking file:', file.name, 'mime:', file.mime);
+                    return file.mime === 'application/pdf' || file.name.toLowerCase().endsWith('.pdf');
+                },
                 actionHandler: function(fileName, context) {
                     const dir = context.dir || '/';
                     const path = dir + '/' + fileName;
