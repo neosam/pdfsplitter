@@ -6,10 +6,11 @@
 
     const PDFSplitter = {
         attach: function(fileList) {
+            console.log('PDFSplitter: Attaching to fileList...');
             fileList.fileActions.registerAction({
                 name: 'splitPDF',
                 displayName: t('pdfsplitter', 'Split PDF'),
-                mime: 'application/pdf',
+                mime: 'application/pdf,application/x-pdf',
                 permissions: OC.PERMISSION_UPDATE,
                 iconClass: 'icon-pdfsplitter',
                 actionHandler: function(fileName, context) {

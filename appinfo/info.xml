@@ -4,7 +4,7 @@
     <name>PDF Splitter</name>
     <summary>Split PDF files into individual pages</summary>
     <description>Adds a context menu entry to split PDF files into individual pages.</description>
-    <version>0.0.6</version>
+    <version>0.0.7</version>
     <licence>AGPL</licence>
     <author>neosam</author>
     <namespace>PDFSplitter</namespace>
