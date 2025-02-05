@@ -17,7 +17,12 @@ class Application extends App implements IBootstrap {
     }
 
     public function boot(IBootContext $context): void {
-        \OCP\Util::addScript('pdfsplitter', 'pdfsplitter');
-        \OCP\Util::addStyle('pdfsplitter', 'style');
+        // Only load the script when in the Files app
+        $request = \OC::$server->getRequest();
+        if (isset($request->getPathInfo()[3]) && $request->getPathInfo()[3] === 'files') {
+            \OCP\Util::addScript('pdfsplitter', 'pdfsplitter');
+            \OCP\Util::addStyle('pdfsplitter', 'style');
+            \OCP\Util::addScript('pdfsplitter', 'pdfsplitter', 'files');  // Explicitly load in Files app
+        }
     }
 }
