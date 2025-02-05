@@ -1,10 +1,5 @@
 <?php
-namespace OCA\PDFSplitter\AppInfo;
+require_once __DIR__ . '/../lib/Application.php';
 
-use OCP\AppFramework\App;
-
-class Application extends App {
-    public function __construct() {
-        parent::__construct('pdfsplitter');
-    }
-}
+// This will properly initialize the app
+$app = new OCA\PDFSplitter\AppInfo\Application();

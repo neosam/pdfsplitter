@@ -1,4 +1,7 @@
 (function(OCA) {
+    'use strict';
+    
+    console.log('PDFSplitter: Loading extension...');
     OCA.Files = OCA.Files || {};
 
     const PDFSplitter = {
